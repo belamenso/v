@@ -43,6 +43,8 @@ proc vify*(strCode: string): string =
   for c in str:
     var n = ord(c) - 7
     bytes.add n div 25
+    if n div 25 > 4:
+      echo c & " -> " & $n
     n = n mod 25
     bytes.add n div 5
     n = n mod 5
@@ -56,9 +58,15 @@ proc vify*(strCode: string): string =
       lineLen = 0
       result &= "\n"
 
-macro v*(code: untyped):untyped {.discardable.} = action(0, code)
-macro vv*(code: untyped):untyped {.discardable.} = action(1, code)
-macro vvv*(code: untyped):untyped {.discardable.} = action(2, code)
-macro vvvv*(code: untyped):untyped {.discardable.} = action(3, code)
-macro vvvvv*(code: untyped):untyped {.discardable.} = action(4, code)
+macro generateDefinitions =
+  result = newStmtList()
+
+  for i in 1..10:
+    let
+      number = newIntLitNode(i-1)
+      name = newIdentNode("v" * i)
+    result.add quote do:
+      macro `name`*(code: untyped):untyped {.discardable.} = action(`number`, code)
+
+generateDefinitions
 
