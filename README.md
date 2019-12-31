@@ -6,8 +6,8 @@ import v
 
 vvvv vvvv vvvvv vvvv vvvv vvv vvvv vvvvv vvv vvvvv v vvvvv vv 
 v vvv vvv vvvv v vvvv vvvv vvvvv vvvvv v vv vvvvv v vv vvvvv 
-v vvvvv vv v v vvvvvvvvvv vv vvvv vvvvvvv v vvv vvvvvv vv vvvv vvvvvv
-vvv v vv v vv vv v vvv v v vvvv v v vvvv
+v vvvvv vv v v vvvvvvvvvv vv vvvv vvvvvvv v vvv vvvvvv vv vvvv
+vvvvvv vvv v vv v vv vv v vvv v v vvvv v v vvvv
 ```
 
 To get a working program:
