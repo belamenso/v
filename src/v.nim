@@ -43,15 +43,17 @@ proc vify*(strCode: string): string =
   for c in str:
     var n = ord(c) - 7
     bytes.add n div 25
-    if n div 25 > 4:
-      echo c & " -> " & $n
     n = n mod 25
     bytes.add n div 5
     n = n mod 5
     bytes.add n
 
   var lineLen = 0
-  for s in bytes.map(n => "v" * (n+1)):
+  let idents = bytes.map(n => "v" * (n+1))
+  for i in 0..<idents.len:
+    let s = idents[i]
+    if i+1 == idents.len and result[result.len-1] == '\n':
+      result.delete(result.len-1, result.len)
     result &= s & " "
     lineLen += s.len + 1
     if lineLen >= 60:
