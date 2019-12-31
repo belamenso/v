@@ -1,5 +1,5 @@
 # v
-A much needed simplification of Nim syntax inspired by [github.com/mame/_](https://github.com/mame/_). Supports unicode ❤️
+A radical simplification of Nim syntax inspired by [github.com/mame/_](https://github.com/mame/_). Supports unicode ❤️
 
 ```nim
 import v
